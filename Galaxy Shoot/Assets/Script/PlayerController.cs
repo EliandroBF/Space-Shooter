@@ -6,12 +6,13 @@ public class PlayerController : MonoBehaviour
 {
 
     //Variavel de velocidade
-    public float vel = 10f;
+    private Rigidbody2D meuRB;
+    [SerializeField] float velocidade = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        meuRB = GetComponent<Rigidbody2D>();
         
 
     }
@@ -19,11 +20,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        //Escrevendo uma variavel com var para pegar o movimento para a horizontal
-        var horizontal = Input.GetAxis("Horizontal") * vel;
-        Debug.Log(horizontal);
+        //Pegando o input vertical
+        float vertical = Input.GetAxis("Vertical");
+        //Pegando o input orizontal
+        float horizontal = Input.GetAxis("Horizontal");
+        Vector2 minhaVelocidade = new Vector2(horizontal, vertical);
+        //Metodo Normalize
+        minhaVelocidade.Normalize();
 
+        //Passando a minha velocidade para o meu RB
+        meuRB.velocity = minhaVelocidade * velocidade;  
+        
+
+        
+        
 
     }
 }
