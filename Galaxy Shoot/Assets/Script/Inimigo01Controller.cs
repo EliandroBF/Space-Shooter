@@ -11,7 +11,7 @@ public class Inimigo01Controller : MonoBehaviour
     [SerializeField] private float velocidade = 3f;
 
     //Variavel para o meu tiro do inimigo
-    public GameObject meuTiro;
+    [SerializeField] private GameObject meuTiro;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,7 @@ public class Inimigo01Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Instaciando o tiro do inimigo
+        Instantiate(meuTiro, transform.position, transform.rotation);
     }
 }
