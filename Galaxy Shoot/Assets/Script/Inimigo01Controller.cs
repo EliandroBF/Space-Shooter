@@ -4,31 +4,38 @@ using UnityEngine;
 
 public class Inimigo01Controller : MonoBehaviour
 {
-    //Variavel para pegar meu Rigidbody2d
+    //Variavel para pegar meu Rigidbody2d...
     private Rigidbody2D meuRB;
 
-    //Velocidade do boss 1
+    //Velocidade do boss 1...
     [SerializeField] private float velocidade = 3f;
 
-    //Variavel para o meu tiro do inimigo
+    //Variavel para o meu tiro do inimigo...
     [SerializeField] private GameObject meuTiro;
+    private float esperaTiro = 1f; 
 
     // Start is called before the first frame update
     void Start()
     {
-        //Pegando meu Rigidbody2d
+        //Pegando meu Rigidbody2d...
         meuRB = GetComponent<Rigidbody2D>();
 
-        //Fazendo o inimigo descer
-        meuRB.velocity = new Vector2(0f, -velocidade);
+        //Fazendo o inimigo descer...
+        meuRB.velocity = new Vector2(0f, -velocidade );
+        
 
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Instaciando o tiro do inimigo
-        Instantiate(meuTiro, transform.position, transform.rotation);
+        //Diminuir a espera, e se ela for menor igual a zero então eu atiro...
+        esperaTiro -= Time.deltaTime;
+        if (esperaTiro <= 0)
+        {
+            //Instaciando o tiro do inimigo...
+            Instantiate(meuTiro, transform.position, transform.rotation);
+        }
     }
 }

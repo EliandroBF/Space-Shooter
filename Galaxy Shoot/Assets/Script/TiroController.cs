@@ -7,7 +7,7 @@ public class TiroController : MonoBehaviour
     //Variavel Rigidbody...
     private Rigidbody2D meuRB;
     [SerializeField] private float vel = 10f;
-    
+      
     
     
     
@@ -20,6 +20,8 @@ public class TiroController : MonoBehaviour
 
         //Tiro Indo para cima...
         meuRB.velocity = new Vector2(0f, vel);
+
+        
     }
 
     // Update is called once per frame
