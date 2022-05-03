@@ -10,6 +10,9 @@ public class Inimigo01Controller : MonoBehaviour
     //Velocidade do boss 1
     [SerializeField] private float velocidade = 3f;
 
+    //Variavel para o meu tiro do inimigo
+    public GameObject meuTiro;
+
     // Start is called before the first frame update
     void Start()
     {
