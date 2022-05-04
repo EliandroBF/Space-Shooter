@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject meuTiro;
     //Variavel para pegar a posicao do meu tiro
     [SerializeField] private Transform posicaoTiro;
+    //  Variavel Vida
+    [SerializeField] private int vida = 3;
     
 
     // Start is called before the first frame update
@@ -45,5 +47,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-   
+    //Criar um método perde vida que recebe a quantidade de vida que ele deve perder (dano)
+    public void PerdeVida(int dano)
+    {
+        //Perdendo a minha vida com base no dano
+        vida -= dano;
+
+
+        Debug.Log("buuuuu!!!!!1");
+    }
+
 }

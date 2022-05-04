@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TiroController : MonoBehaviour
 {
     //Variavel Rigidbody...
@@ -20,7 +21,7 @@ public class TiroController : MonoBehaviour
 
         //Tiro Indo para cima...
         meuRB.velocity = new Vector2(0f, vel);
-
+        
         
     }
 
@@ -33,6 +34,20 @@ public class TiroController : MonoBehaviour
     //Destruindo o tiro do player...
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Pegar o método perde vida e aplicar nele o dano (other)
+        if (collision.CompareTag("Inimigo01"))
+        {
+            //Isso só deve rodar se ele colidiu com alguem que tem o script inimigo 01 controller 
+            collision.GetComponent<Inimigo01Controller>().PerdeVida(1);
+            
+        }
+        if (collision.CompareTag("Jogador"))
+        {
+            //Isso só deve rodar se ele colidiu com alguem que tem o script player controller 
+            collision.GetComponent<PlayerController>().PerdeVida(1);
+            
+        }
+
         Destroy(gameObject);
     }
 

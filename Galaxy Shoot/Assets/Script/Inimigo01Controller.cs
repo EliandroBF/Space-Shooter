@@ -16,6 +16,9 @@ public class Inimigo01Controller : MonoBehaviour
     // Variavei para pegar a posicao do tiro
     [SerializeField] private Transform posicaoTiro;
 
+    //Vida 
+    [SerializeField] private int vida = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +30,7 @@ public class Inimigo01Controller : MonoBehaviour
         
         //Deixando a espera aleatoria para o primeiro tiro
         esperaTiro = Random.Range(0.5f, 2f);
-
+       
     }
 
     // Update is called once per frame
@@ -37,8 +40,8 @@ public class Inimigo01Controller : MonoBehaviour
         //Pegando informações dos meus filhos
         bool visivel = GetComponentInChildren<SpriteRenderer>().isVisible;
         
-
-
+        
+        
 
         //Diminuir a espera, e se ela for menor igual a zero então eu atiro...
         esperaTiro -= Time.deltaTime;
@@ -50,5 +53,17 @@ public class Inimigo01Controller : MonoBehaviour
             esperaTiro = Random.Range(1.5f, 2f);
             
         }
+
+
+    }
+
+    //Criar um método perde vida que recebe a quantidade de vida que ele deve perder (dano)
+    public void PerdeVida(int dano)
+    {
+        //Perdendo a minha vida com base no dano
+        vida -= dano;
+
+
+        Debug.Log("buuuuu!!!!!1");
     }
 }

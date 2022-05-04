@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2519235038853079370}
   - component: {fileID: 2519235038853079369}
   - component: {fileID: 1503011979}
-  - component: {fileID: 1472200425}
   m_Layer: 7
   m_Name: inimigo_1_0
   m_TagString: Untagged
@@ -103,22 +102,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &1472200425
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2519235038853079371}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.66, y: 1.08}
-  m_Direction: 0
 --- !u!1 &2519235039921355033
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,9 +114,10 @@ GameObject:
   - component: {fileID: 2519235039921355039}
   - component: {fileID: 2519235039921355032}
   - component: {fileID: 5038270569076623369}
+  - component: {fileID: 2098806953}
   m_Layer: 7
   m_Name: Inimigo
-  m_TagString: Untagged
+  m_TagString: Inimigo01
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,6 +174,7 @@ MonoBehaviour:
   velocidade: 2
   meuTiro: {fileID: 6203681931837541160, guid: 2f87a52882ba19e4a8b260d8d6e92095, type: 3}
   posicaoTiro: {fileID: 3546439395367578661}
+  vida: 1
 --- !u!95 &5038270569076623369
 Animator:
   serializedVersion: 3
@@ -209,6 +194,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &2098806953
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2519235039921355033}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &6704244536115018515
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6704244536115018515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -0.465, z: 0}
+  m_LocalPosition: {x: -0.14, y: -0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2519235039921355038}
