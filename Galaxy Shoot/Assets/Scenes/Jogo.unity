@@ -187,10 +187,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2519235039921355032, guid: 67405256d851f1449a5e04ad5e476db4, type: 3}
-      propertyPath: velocidade
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2519235039921355033, guid: 67405256d851f1449a5e04ad5e476db4, type: 3}
       propertyPath: m_Name
       value: Inimigo
@@ -201,11 +197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2519235039921355038, guid: 67405256d851f1449a5e04ad5e476db4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.72
+      value: -4.8
       objectReference: {fileID: 0}
     - target: {fileID: 2519235039921355038, guid: 67405256d851f1449a5e04ad5e476db4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.45
+      value: 7.34
       objectReference: {fileID: 0}
     - target: {fileID: 2519235039921355038, guid: 67405256d851f1449a5e04ad5e476db4, type: 3}
       propertyPath: m_LocalPosition.z

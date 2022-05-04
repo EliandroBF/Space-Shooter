@@ -13,6 +13,8 @@ public class Inimigo01Controller : MonoBehaviour
     //Variavel para o meu tiro do inimigo...
     [SerializeField] private GameObject meuTiro;
     private float esperaTiro = 1f; 
+    // Variavei para pegar a posicao do tiro
+    [SerializeField] private Transform posicaoTiro;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,7 @@ public class Inimigo01Controller : MonoBehaviour
         //Vou checar se o meu sprite rederer está vísivel
         //Pegando informações dos meus filhos
         bool visivel = GetComponentInChildren<SpriteRenderer>().isVisible;
-        Debug.Log(visivel);
+        
 
 
 
@@ -43,7 +45,7 @@ public class Inimigo01Controller : MonoBehaviour
         if (esperaTiro <= 0 && visivel == true)
         {
             //Instaciando o tiro do inimigo...
-            Instantiate(meuTiro, transform.position, transform.rotation);
+            Instantiate(meuTiro, posicaoTiro.position, transform.rotation);
 
             esperaTiro = Random.Range(1.5f, 2f);
             

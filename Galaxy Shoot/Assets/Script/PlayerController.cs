@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     //Pegando meu objeto Tiro...
     [SerializeField] private GameObject meuTiro;
+    //Variavel para pegar a posicao do meu tiro
+    [SerializeField] private Transform posicaoTiro;
     
 
     // Start is called before the first frame update
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(meuTiro, transform.position, transform.rotation);
+            Instantiate(meuTiro, posicaoTiro.position, transform.rotation);
         }
     }
 
