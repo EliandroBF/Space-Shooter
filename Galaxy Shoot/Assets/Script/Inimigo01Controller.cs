@@ -18,6 +18,7 @@ public class Inimigo01Controller : MonoBehaviour
 
     //Vida 
     [SerializeField] private int vida = 1;
+    [SerializeField] private GameObject explosao;
 
     // Start is called before the first frame update
     void Start()
@@ -57,13 +58,18 @@ public class Inimigo01Controller : MonoBehaviour
 
     }
 
-    //Criar um método perde vida que recebe a quantidade de vida que ele deve perder (dano)
+    //Criar um método perde vida que recebe a quantidade de vida que ele deve perder (dano)...
     public void PerdeVida(int dano)
     {
-        //Perdendo a minha vida com base no dano
+        //Perdendo a minha vida com base no dano...
         vida -= dano;
+        //Checando se eu morri...
+        if (vida <= 0)
+        {
+            Destroy(gameObject);
+            //Criando a minha explosão...
+            Instantiate(explosao, transform.position, transform.rotation);
+        }
 
-        
-        Debug.Log("buuuuu!!!!!2");
     }
 }

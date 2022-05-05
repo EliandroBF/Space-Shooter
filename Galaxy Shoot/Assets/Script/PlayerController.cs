@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     //Variavel para pegar a posicao do meu tiro
     [SerializeField] private Transform posicaoTiro;
     //  Variavel Vida
-    [SerializeField] private int vida = 3;
+    [SerializeField] private int vida = 5;
+    [SerializeField] private GameObject explosao;
     
 
     // Start is called before the first frame update
@@ -53,8 +54,15 @@ public class PlayerController : MonoBehaviour
         //Perdendo a minha vida com base no dano
         vida -= dano;
 
+        //Checando se eu morri
+        if (vida <= 0)
+        {
+            Destroy(gameObject);
+            //Criando um instatiate para criar a explosão
+            Instantiate(explosao, transform.position, transform.rotation);
+        }
 
-        Debug.Log("buuuuu!!!!!1");
+        
     }
 
 }
