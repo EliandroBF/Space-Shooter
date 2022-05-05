@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 4
+  fumacaTiro: {fileID: 4423160893448067967, guid: 733795574988d714e941b9854988fdcc, type: 3}
 --- !u!95 &722078666925094382
 Animator:
   serializedVersion: 3

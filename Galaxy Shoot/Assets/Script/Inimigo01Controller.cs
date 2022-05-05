@@ -63,7 +63,7 @@ public class Inimigo01Controller : MonoBehaviour
         //Perdendo a minha vida com base no dano
         vida -= dano;
 
-
-        Debug.Log("buuuuu!!!!!1");
+        
+        Debug.Log("buuuuu!!!!!2");
     }
 }

@@ -9,7 +9,7 @@ public class TiroController : MonoBehaviour
     private Rigidbody2D meuRB;
     [SerializeField] private float vel = 10f;
       
-    
+    [SerializeField] private GameObject fumacaTiro;
     
     
 
@@ -39,15 +39,20 @@ public class TiroController : MonoBehaviour
         {
             //Isso só deve rodar se ele colidiu com alguem que tem o script inimigo 01 controller 
             collision.GetComponent<Inimigo01Controller>().PerdeVida(1);
-            
+
+            //Tentando Colocar a animaçao de tiro
+            Instantiate(fumacaTiro, transform.position, transform.rotation);
         }
+        
         if (collision.CompareTag("Jogador"))
         {
             //Isso só deve rodar se ele colidiu com alguem que tem o script player controller 
             collision.GetComponent<PlayerController>().PerdeVida(1);
             
+            //Tentando Colocar a animaçao de tiro
+            Instantiate(fumacaTiro, transform.position, transform.rotation);
         }
-
+        
         Destroy(gameObject);
     }
 
