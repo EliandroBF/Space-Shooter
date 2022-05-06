@@ -80,6 +80,8 @@ MonoBehaviour:
   velocidade: 8
   meuTiro: {fileID: 7115591719786369481, guid: ec147e51801306849a7a19b8058f1407, type: 3}
   posicaoTiro: {fileID: 25147997}
+  vida: 5
+  explosao: {fileID: 341184373137145658, guid: f2e1888f0324c1b4cad9f4b14c884d9a, type: 3}
 --- !u!50 &6134935471945685503
 Rigidbody2D:
   serializedVersion: 4
