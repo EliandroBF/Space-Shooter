@@ -35,10 +35,10 @@ public class TiroController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Pegar o método perde vida e aplicar nele o dano (other)
-        if (collision.CompareTag("Inimigo01"))
+        if (collision.CompareTag("Inimigo"))
         {
             //Isso só deve rodar se ele colidiu com alguem que tem o script inimigo 01 controller 
-            collision.GetComponent<Inimigo01Controller>().PerdeVida(1);
+            collision.GetComponent<InimigoPai>().PerdeVida(1);
 
             //Tentando Colocar a animaçao de tiro
             Instantiate(fumacaTiro, transform.position, transform.rotation);
