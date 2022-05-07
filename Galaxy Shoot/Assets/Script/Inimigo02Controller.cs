@@ -8,6 +8,7 @@ public class Inimigo02Controller : InimigoPai
     private Rigidbody2D meuRB;
     
     [SerializeField] private Transform posicaoTiro;
+    [SerializeField] private float yMax = 2.75f;
     
 
 
@@ -28,6 +29,22 @@ public class Inimigo02Controller : InimigoPai
     void Update()
     {
         Atirando();
+
+        //SE o inimigo dois chegar no yMax
+        if (transform.position.y < yMax)
+        {
+            //Checando de que lado estou
+            //Checamdo SE estou na direita
+            if (transform.position.x >= 0.01f)
+            {
+                Debug.Log("Estou na direita");
+            }
+            //Checando SE estou na esquerda
+            if (transform.position.x <= 0.0f)
+            {
+                Debug.Log("Estou na esquerda");
+            }
+        }
     }
 
     private void    Atirando()
@@ -38,6 +55,7 @@ public class Inimigo02Controller : InimigoPai
 
         if (visivel)
         {
+
             //Encontrando o player na cena
             var player = FindObjectOfType<PlayerController>();
 
