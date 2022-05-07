@@ -20,7 +20,7 @@ public class TiroController : MonoBehaviour
         meuRB = GetComponent<Rigidbody2D>();
 
         //Tiro Indo para cima...
-        meuRB.velocity = new Vector2(0f, vel);
+        //meuRB.velocity = new Vector2(0f, vel);
         
         
     }

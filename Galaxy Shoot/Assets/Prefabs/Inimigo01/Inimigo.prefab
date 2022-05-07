@@ -172,9 +172,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 0
+  velocidadeTiro: 3
   vida: 1
   explosao: {fileID: 341184373137145658, guid: f2e1888f0324c1b4cad9f4b14c884d9a, type: 3}
   meuTiro: {fileID: 6203681931837541160, guid: 2f87a52882ba19e4a8b260d8d6e92095, type: 3}
+  esperaTiro: 1
   posicaoTiro: {fileID: 3546439395367578661}
 --- !u!95 &5038270569076623369
 Animator:

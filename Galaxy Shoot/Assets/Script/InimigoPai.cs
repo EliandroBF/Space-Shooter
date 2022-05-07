@@ -5,8 +5,12 @@ using UnityEngine;
 public class InimigoPai : MonoBehaviour
 {
     [SerializeField] protected float velocidade = 1f;
+    [SerializeField] protected float velocidadeTiro = 3f;
     [SerializeField] protected int vida = 2;
     [SerializeField] protected GameObject explosao;
+    [SerializeField] protected GameObject meuTiro;
+    //Variavel para o meu tiro do inimigo...
+    [SerializeField] protected float esperaTiro = 1f;
 
 
     // Start is called before the first frame update

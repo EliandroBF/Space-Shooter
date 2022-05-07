@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     //Variavel de velocidade...
     private Rigidbody2D meuRB;
     [SerializeField] float velocidade = 10f;
+    [SerializeField] private float velocidadeTiro = 2f;
 
     //Pegando meu objeto Tiro...
     [SerializeField] private GameObject meuTiro;
@@ -30,6 +31,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Movendo();
+
+        Atirando();
+    }
+
+    private void Movendo()
+    {
         //Pegando o input vertical...
         float vertical = Input.GetAxis("Vertical");
         //Pegando o input orizontal...
@@ -39,12 +47,16 @@ public class PlayerController : MonoBehaviour
         minhaVelocidade.Normalize();
 
         //Passando a minha velocidade para o meu RB...
-        meuRB.velocity = minhaVelocidade * velocidade;  
-        
+        meuRB.velocity = minhaVelocidade * velocidade;
+    }
 
+    private void    Atirando()
+    {
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(meuTiro, posicaoTiro.position, transform.rotation);
+            var tiro = Instantiate(meuTiro, posicaoTiro.position, transform.rotation);
+            //Dar direção e velocidade para o RB do tiro
+            tiro.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velocidadeTiro);
         }
     }
 
