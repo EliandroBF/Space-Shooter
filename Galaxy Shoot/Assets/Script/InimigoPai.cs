@@ -11,6 +11,7 @@ public class InimigoPai : MonoBehaviour
     [SerializeField] protected GameObject meuTiro;
     //Variavel para o meu tiro do inimigo...
     [SerializeField] protected float esperaTiro = 1f;
+    
 
 
     // Start is called before the first frame update
@@ -38,5 +39,6 @@ public class InimigoPai : MonoBehaviour
             //Explosao criada quando o objeto for destruido
             Instantiate(explosao, transform.position, transform.rotation);
         }
+        
     }
 }

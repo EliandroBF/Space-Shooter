@@ -33,6 +33,8 @@ public class Inimigo01Controller : InimigoPai
     {
         Atirando();
 
+        
+
     }
 
     private void Atirando()
@@ -54,6 +56,16 @@ public class Inimigo01Controller : InimigoPai
 
             esperaTiro = Random.Range(1.5f, 2f);
 
+        }        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {    
+        if (collision.CompareTag("Inimigo"))
+        {
+            //Isso só deve rodar se ele colidiu com alguem que tem o script inimigo 01 controller 
+            collision.GetComponent<InimigoPai>().PerdeVida(1);
         }
+        Destroy(gameObject);
     }
 }

@@ -9,6 +9,7 @@ public class Inimigo02Controller : InimigoPai
     
     [SerializeField] private Transform posicaoTiro;
     [SerializeField] private float yMax = 2.75f;
+    [SerializeField] private bool possoMover = true;
     
 
 
@@ -31,19 +32,28 @@ public class Inimigo02Controller : InimigoPai
         Atirando();
 
         //SE o inimigo dois chegar no yMax
-        if (transform.position.y < yMax)
+        if (transform.position.y < yMax && possoMover)
         {
             //Checando de que lado estou
             //Checamdo SE estou na direita
-            if (transform.position.x >= 0.01f)
+            if (transform.position.x >= 0.01f )
             {
                 Debug.Log("Estou na direita");
-            }
+                meuRB.velocity = new Vector2(velocidade, velocidade);
+
+                //Falando que não posso me mover
+                 possoMover = false;
+            } 
             //Checando SE estou na esquerda
-            if (transform.position.x <= 0.0f)
+            else
             {
                 Debug.Log("Estou na esquerda");
+                meuRB.velocity = new Vector2(velocidade * -1, velocidade);
+
+                //Falando que não posso me mover]
+                possoMover = false;
             }
+                        
         }
     }
 
@@ -83,7 +93,18 @@ public class Inimigo02Controller : InimigoPai
 
                     esperaTiro = Random.Range(1.5f, 3f);
                 }
+                
             }
         }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {    
+        if (collision.CompareTag("Inimigo"))
+        {
+            //Isso só deve rodar se ele colidiu com alguem que tem o script inimigo 01 controller 
+            collision.GetComponent<InimigoPai>().PerdeVida(1);
+        }
+        Destroy(gameObject);
     }
 }
