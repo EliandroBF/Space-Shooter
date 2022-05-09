@@ -38,7 +38,6 @@ public class Inimigo02Controller : InimigoPai
             //Checamdo SE estou na direita
             if (transform.position.x >= 0.01f )
             {
-                Debug.Log("Estou na direita");
                 meuRB.velocity = new Vector2(velocidade, velocidade);
 
                 //Falando que não posso me mover
@@ -47,7 +46,6 @@ public class Inimigo02Controller : InimigoPai
             //Checando SE estou na esquerda
             else
             {
-                Debug.Log("Estou na esquerda");
                 meuRB.velocity = new Vector2(velocidade * -1, velocidade);
 
                 //Falando que não posso me mover]
@@ -98,13 +96,5 @@ public class Inimigo02Controller : InimigoPai
         }
     }
     
-    private void OnTriggerEnter2D(Collider2D collision)
-    {    
-        if (collision.CompareTag("Inimigo"))
-        {
-            //Isso só deve rodar se ele colidiu com alguem que tem o script inimigo 01 controller 
-            collision.GetComponent<InimigoPai>().PerdeVida(1);
-        }
-        Destroy(gameObject);
-    }
+    
 }

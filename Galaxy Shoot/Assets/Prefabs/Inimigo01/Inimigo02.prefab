@@ -126,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878564128238748980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -0.56, z: 0}
+  m_LocalPosition: {x: -0.03, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8795742046049204698}
@@ -187,7 +187,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &8795742046049204696
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.028371334, y: -0.27212414}
@@ -216,9 +216,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63ab2be055ac57449bf2dacc8129363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 0
+  velocidade: -3
+  velocidadeTiro: 7
   vida: 2
   explosao: {fileID: 341184373137145658, guid: f2e1888f0324c1b4cad9f4b14c884d9a, type: 3}
   meuTiro: {fileID: 8867137031592540258, guid: 6207db2dcccd9f14bb61b7b7850af63e, type: 3}
   esperaTiro: 1
   posicaoTiro: {fileID: 4662152548659586784}
+  yMax: 2.75
+  possoMover: 1

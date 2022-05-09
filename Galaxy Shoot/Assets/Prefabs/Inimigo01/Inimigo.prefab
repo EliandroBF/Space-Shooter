@@ -171,8 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1283c8aa3bdab9341b37459323ae13f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 0
-  velocidadeTiro: 3
+  velocidade: 3
+  velocidadeTiro: 7
   vida: 1
   explosao: {fileID: 341184373137145658, guid: f2e1888f0324c1b4cad9f4b14c884d9a, type: 3}
   meuTiro: {fileID: 6203681931837541160, guid: 2f87a52882ba19e4a8b260d8d6e92095, type: 3}
@@ -207,7 +207,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

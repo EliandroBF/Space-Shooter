@@ -41,4 +41,28 @@ public class InimigoPai : MonoBehaviour
         }
         
     }
+    //Se destruindo ao colidir com o destruidor
+    private void OnTriggerEnter2D(Collider2D collision)
+    {    
+        if (collision.CompareTag("Destruidor"))
+        {
+            Destroy(gameObject);
+        }
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Jogador"))
+        {
+            Destroy(gameObject);
+
+            //Explosão inimigo
+            Instantiate(explosao, transform.position, transform.rotation);
+
+            //Tirando vida do player
+            other.gameObject.GetComponent<PlayerController>().PerdeVida(1);
+        }
+    }
+
 }
