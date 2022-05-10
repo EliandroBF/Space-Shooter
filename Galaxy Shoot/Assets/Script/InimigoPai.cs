@@ -28,41 +28,49 @@ public class InimigoPai : MonoBehaviour
 
     public void PerdeVida(int dano)
     {
-        //Perdendo vida com base no dano
-        vida -= dano;
-
-        //Checando se eu morri
-        if (vida <= 0)
+        //Só vou rodar SE meu Y fou menor do que 5
+        if (transform.position.y < 5)
         {
-            Destroy(gameObject);
+            //Perdendo vida com base no dano
+            vida -= dano;
 
-            //Explosao criada quando o objeto for destruido
-            Instantiate(explosao, transform.position, transform.rotation);
+            //Checando se eu morri
+            if (vida <= 0)
+            {
+                Destroy(gameObject);
+
+                //Explosao criada quando o objeto for destruido
+                Instantiate(explosao, transform.position, transform.rotation);
+            }
         }
-        
     }
+
+    
     //Se destruindo ao colidir com o destruidor
     private void OnTriggerEnter2D(Collider2D collision)
     {    
-        if (collision.CompareTag("Destruidor"))
-        {
-            Destroy(gameObject);
-        }
+        
+            if (collision.CompareTag("Destruidor"))
+            {
+                Destroy(gameObject);
+            }
         
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Jogador"))
-        {
-            Destroy(gameObject);
+        
+            if (other.gameObject.CompareTag("Jogador"))
+            {
+                Destroy(gameObject);
 
-            //Explosão inimigo
-            Instantiate(explosao, transform.position, transform.rotation);
+                //Explosão inimigo
+                Instantiate(explosao, transform.position, transform.rotation);
 
-            //Tirando vida do player
-            other.gameObject.GetComponent<PlayerController>().PerdeVida(1);
-        }
+                //Tirando vida do player
+                other.gameObject.GetComponent<PlayerController>().PerdeVida(1);
+            }
+        
     }
 
 }
