@@ -6,10 +6,12 @@ public class GeradorInimigo : MonoBehaviour
 {
     //Criando inimigos
     [SerializeField] private GameObject[] inimigos;
-    private int pontos = 0;
+    [SerializeField] private int pontos = 0;
     [SerializeField] private int level = 1;
+    [SerializeField] private int baseLevel = 100;
+    [SerializeField] private int qtdInimigo = 0;
 
-    private float esperaInimigo = 0f;
+    [SerializeField] private float esperaInimigo = 0f;
     [SerializeField] private float tempoEspera = 5f;
 
     // Start is called before the first frame update
@@ -24,20 +26,41 @@ public class GeradorInimigo : MonoBehaviour
         GeraInimigos();
     }
 
+    //Ganhando pontos
+    public void GanhaPontos(int pontos)
+    {
+        this.pontos += pontos;
+        //Ganhando level SE os pontos forem maior do que a base do level * level 
+        if (this.pontos > baseLevel * level)
+        {
+            level++;
+        }
+    }
+
+    //Diminuindo a quantidade de inimigos
+    public void DiminuiQuantidade()
+    {
+        qtdInimigo--;
+    }
+
+
     private void GeraInimigos()
     {
         //Diminuindo o tempo SE ele for maior do que 0
-        if (esperaInimigo > 0)
+        
+        if (esperaInimigo > 0 && qtdInimigo <= 0)
         {
             esperaInimigo -= Time.deltaTime;
         }
+        
 
         //Checando SE a espera já zerou
-        if (esperaInimigo <= 0f)
+        if (esperaInimigo <= 0f && qtdInimigo <= 0)
         {
             int quantidade = level * 4;
-            int qtdInimigo = 0;
+            
 
+            
             //Criando vários inimigos de uma vez...
             while(qtdInimigo < quantidade)
             {

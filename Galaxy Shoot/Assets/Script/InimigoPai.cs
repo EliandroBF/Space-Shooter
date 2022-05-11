@@ -11,6 +11,7 @@ public class InimigoPai : MonoBehaviour
     [SerializeField] protected GameObject meuTiro;
     //Variavel para o meu tiro do inimigo...
     [SerializeField] protected float esperaTiro = 1f;
+    [SerializeField] protected int pontos = 10;
     
 
 
@@ -41,6 +42,12 @@ public class InimigoPai : MonoBehaviour
 
                 //Explosao criada quando o objeto for destruido
                 Instantiate(explosao, transform.position, transform.rotation);
+
+                //Ganhando pontos
+                //controlador de inimigos
+                var gerador = FindObjectOfType<GeradorInimigo>();
+                gerador.DiminuiQuantidade();
+                gerador.GanhaPontos(pontos);
             }
         }
     }
@@ -53,6 +60,9 @@ public class InimigoPai : MonoBehaviour
             if (collision.CompareTag("Destruidor"))
             {
                 Destroy(gameObject);
+                //controlador de inimigos
+                var gerador = FindObjectOfType<GeradorInimigo>();
+                gerador.DiminuiQuantidade();
             }
         
     }
@@ -63,6 +73,10 @@ public class InimigoPai : MonoBehaviour
             if (other.gameObject.CompareTag("Jogador"))
             {
                 Destroy(gameObject);
+
+                //controlador de inimigos
+                var gerador = FindObjectOfType<GeradorInimigo>();
+                gerador.DiminuiQuantidade();
 
                 //Explosão inimigo
                 Instantiate(explosao, transform.position, transform.rotation);

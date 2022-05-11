@@ -216,12 +216,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63ab2be055ac57449bf2dacc8129363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: -3
-  velocidadeTiro: 7
-  vida: 2
+  velocidade: -2
+  velocidadeTiro: 3
+  vida: 1
   explosao: {fileID: 341184373137145658, guid: f2e1888f0324c1b4cad9f4b14c884d9a, type: 3}
   meuTiro: {fileID: 8867137031592540258, guid: 6207db2dcccd9f14bb61b7b7850af63e, type: 3}
-  esperaTiro: 1
+  esperaTiro: 5
+  pontos: 25
   posicaoTiro: {fileID: 4662152548659586784}
   yMax: 2.75
   possoMover: 1

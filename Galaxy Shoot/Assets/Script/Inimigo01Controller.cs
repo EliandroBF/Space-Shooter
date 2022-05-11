@@ -21,7 +21,7 @@ public class Inimigo01Controller : InimigoPai
         meuRB = GetComponent<Rigidbody2D>();
 
         //Fazendo o inimigo descer...
-        meuRB.velocity = new Vector2(0f, -velocidade );
+        meuRB.velocity = new Vector2(0f, velocidade );
         
         //Deixando a espera aleatoria para o primeiro tiro
         esperaTiro = Random.Range(0.5f, 2f);

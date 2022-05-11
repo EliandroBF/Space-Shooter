@@ -46,5 +46,8 @@ MonoBehaviour:
   inimigos:
   - {fileID: 2519235039921355033, guid: 67405256d851f1449a5e04ad5e476db4, type: 3}
   - {fileID: 8795742046049204702, guid: 7df1cd5952500c84ea4603738cdb238d, type: 3}
-  level: 2
+  pontos: 0
+  level: 1
+  baseLevel: 100
+  qtdInimigo: 0
   tempoEspera: 7
