@@ -17,6 +17,13 @@ public class PlayerController : MonoBehaviour
     //  Variavel Vida
     [SerializeField] private int vida = 5;
     [SerializeField] private GameObject explosao;
+
+    //Definindo variaveis para o player não sair da tela.
+    
+    [SerializeField] private float xMax;
+    
+    [SerializeField] private float yMax;
+    
     
 
     // Start is called before the first frame update
@@ -34,6 +41,9 @@ public class PlayerController : MonoBehaviour
         Movendo();
 
         Atirando();
+
+        // O valor do position for mair ou menor o player não vai sair da tela
+        
     }
 
     private void Movendo()
@@ -48,6 +58,15 @@ public class PlayerController : MonoBehaviour
 
         //Passando a minha velocidade para o meu RB...
         meuRB.velocity = minhaVelocidade * velocidade;
+
+        //Fazendo o player NÃO sair da tela...
+        // Checando minha posição X usando o Clamp...
+        float meuX = Mathf.Clamp(transform.position.x, -xMax, xMax);
+        // Checando minha posição X usando o Clamp...
+        float meuY = Mathf.Clamp(transform.position.y, -yMax, yMax); 
+
+        //Aplicando o meuX e meuY à minha posição
+        transform.position = new Vector3(meuX, meuY, transform.position.z);
     }
 
     private void    Atirando()
